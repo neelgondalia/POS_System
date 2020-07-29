@@ -1,0 +1,129 @@
+*************************************
+        TERMINAL COMMANDS
+*************************************
+
+To compile and run the program:
+
+    to compile, type: make
+    to run with given file, type: bin/main assets/Games.csv
+    to run with any other file, place that file in assets folder, then type in terminal: bin/main assets/"filename"
+
+To run the cpp check:
+
+    type make cppcheck
+
+To make doxygen documentation:
+
+    type make doxy
+
+To clean the bin folder
+
+    type make clean
+
+*************************************
+            NOTES
+*************************************
+
+1) Whenever you remove an item from the inventory, the assumption is that the item is no longer on sale. So, if that item is on the invoice, it will be deleted from there as well.
+
+*************************************
+        UNDERSTADING THE MENU
+*************************************
+
+######### MAIN MENU ###############
+
+1. EDIT CUSTOMER INVOICE -------------> SECONDARY MENU
+
+2. REMOVE AN ITEM FROM INVENTORY -----------> prompts the user to enter the name of the item to be deleted. Program searches the item and deletes it.
+
+3. VIEW INVENTORY -------------> prints the updated inventory. Useful to see what items are in stock and to see the correct name or id, which is required in adding, deleting, or changing the invoice.
+
+4. VIEW INVOICE -------------> prints the updated invoice. It is there for the convinience of the user to see what they have added or havent added. Also, to see if any changes are required.
+
+5. CLEAR SCREEN -------------> clears the terminal screen. It is for the convinience of the user to improve readibility as the screen can look messy after a few commands.
+
+6. PRINT REPORTS AND START A NEW FILE ----------> prints reports and asks user if they wish to work on the current sale, new sale or exit the program. Acts appropriately based on the user input.
+
+7. EXIT PROGRAM -------------> exits the program 
+
+######### SECONDARY MENU ############
+
+1. ADD TO INVOICE (BY NAME) -----> prints current invoice. Searches the inventory using the name provided by user and adds it to invoice if the inventory allows.
+
+2. REMOVE FROM INVOICE (BY ID)----------> prints current invoice, so the user can see the id number of the item they wish to remove from invoice. Removes an item from the current invoice, if present in invoice, using the id provided by user. 
+
+3. CHANGE QUANTITIES OF ITEMS IN INVOICE (BY ID) -----> prints current invoice, so the user can see the id number of the item they wish to make changes to. Changes the quantity of the item if the inventory allows, using the id provided.
+
+4. GO BACK -------> goes back to main menu
+
+*************************************
+        BIG O COMPLEXITY
+*************************************
+
+1) Function: createBalancedBinTree --> O(1)
+    Since all the statements are constant time without the use of any loops, the complexity is O(1).
+
+2) Function: createBalancedBinNode --> O(1)
+    Since all the statements are constant time without the use of any loops, the complexity is O(1).
+
+3) Function: destroyBalancedBinTree --> O(2^N)
+    The main function is O(1) but the helper function, deleteEntireTree, is O(2^N), since each function call calls itself twice unless it has been recursed n number of times.
+
+4) Function: treeInsertNode --> O(log N)
+    The main function is O(1) but the helper function, insert, is O(log N). Avl tree height complexity is O(log N) since it is balanced. So, the insert function also has a 0(Log N) complexity as it only recurses through the tree height times.
+
+5) Function: treedeleteNode --> O(N log N)
+    The main function is O(1) but the helper function, delete, is O(N log N). Avl tree height complexity is O(log N) since it is balanced. So, the delete function also has a 0(Log N) complexity as it only recurses through the tree height times.
+    But, there is a while loop, which gives the function the worst case time complexity of O(N log N).
+
+6) Function: treeFindNode --> O(log N)
+    The function recurses height times. The time complexity of height is O(log N) so the time complexity of treeFindNode is also O(log N).
+
+7) Function: treeIsEmpty --> O(1)
+    Since all the statements are constant time without the use of any loops, the complexity is O(1).
+
+8) Function: treeHasTwoChildren --> O(1)
+    Since all the statements are constant time without the use of any loops, the complexity is O(1).
+
+9) Function: treeFindMin --> O(N)
+    Since a while loop iterates n times, the complexity is O(N).
+
+10) Function: treeFindMax --> O(N)
+    Since a while loop iterates n times, the complexity is O(N).
+
+11) Function: treeInOrderPrint --> O(2^N)
+    The main function is O(1) but the helper function, traversal, is O(2^N), since each function call calls itself twice unless it has been recursed n number of times.
+
+12) Function: treePreOrderPrint --> O(2^N)
+    The main function is O(1) but the helper function, traversal, is O(2^N), since each function call calls itself twice unless it has been recursed n number of times.
+
+13) Function: treePostOrderPrint --> O(2^N)
+    The main function is O(1) but the helper function, traversal, is O(2^N), since each function call calls itself twice unless it has been recursed n number of times.
+
+14) Function: traversal --> O(2^N)
+    since each function call calls itself twice unless it has been recursed n number of times, the time complexity is O(2^N).
+
+15) Function: insert --> O(log N)
+    Avl tree height complexity is O(log N) since it is balanced. So, the insert function also has a 0(Log N) complexity as it only recurses through the tree height times.
+
+16) Function: delete --> O(N log N)
+    Avl tree height complexity is O(log N) since it is balanced. So, the delete function also has a 0(Log N) complexity as it only recurses through the tree height times.
+    However, the while loop gives it the worst case time complexity of O(N log N).
+
+17) Function: deleteEntireTree --> O(2^N)
+    since each function call calls itself twice unless it has been recursed n number of times, the time complexity is O(2^N).
+
+18) Function: leftRotation --> O(1)
+    Since all the statements are constant time without the use of any loops, the complexity is O(1).
+
+19) Function: rightRotation --> O(1)
+    Since all the statements are constant time without the use of any loops, the complexity is O(1).
+
+20) Function: height --> O(1)
+    Since all the statements are constant time without the use of any loops, the complexity is O(1).
+
+21) Function: getMax--> O(1)
+    Since all the statements are constant time without the use of any loops, the complexity is O(1).
+
+22) Function: balance--> O(1)
+    Since all the statements are constant time without the use of any loops, the complexity is O(1).
